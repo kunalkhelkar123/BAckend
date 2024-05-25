@@ -293,4 +293,12 @@ router.get("/properties/builderName:buildername", async (req, res) => {
   }
 });
 
+router.get("/check", async (req, res) => {
+  res.send("Working fine");
+});
+
+router.get("/check2", async (req, res) => {
+  res.send("HEllo world");
+});
+
 module.exports = router;
