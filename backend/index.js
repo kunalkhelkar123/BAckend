@@ -13,7 +13,7 @@ dotenv.config();
 
 // ----- Mongoose connection ------
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(`mongodb+srv://kunalkhelkar2000:ch6YFrttRUfOgyKP@cluster01.ftbc18n.mongodb.net/`)
   .then(() => {
     console.log("MongoDB connected Successfully");
   })
@@ -33,6 +33,6 @@ app.use("/api/auth", authRoute);
 app.use("/api/property", propertyDetails);
 app.use("/api/otp", otpRoute);
 
-app.listen(process.env.PORT || 4000, () => {
+app.listen(4000, () => {
   console.log("Server is Running on:4000");
 });
