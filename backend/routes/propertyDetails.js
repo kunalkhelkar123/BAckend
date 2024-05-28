@@ -281,7 +281,7 @@ router.post("/filter_properties", async (req, res) => {
 });
 
 //// get  property details base on builder name
-router.get("/properties/builderName:buildername", async (req, res) => {
+router.get("/properties/builderName/:buildername", async (req, res) => {
   try {
     const property = await PropertyDetails.find({
       builderName: req.params.builderName,
@@ -291,14 +291,6 @@ router.get("/properties/builderName:buildername", async (req, res) => {
     res.status(500).json(error);
     console.log(error);
   }
-});
-
-router.get("/check", async (req, res) => {
-  res.send("Working fine");
-});
-
-router.get("/check2", async (req, res) => {
-  res.send("HEllo world");
 });
 
 module.exports = router;
