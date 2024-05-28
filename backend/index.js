@@ -27,22 +27,15 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 // Serve uploaded images statically
 app.use("/api/uploads", express.static("uploads"));
-// app.use("/api/uploads", propertyDetails);
-
 app.use("/api/auth", authRoute);
 app.use("/api/property", propertyDetails);
 app.use("/api/otp", otpRoute);
 app.get("/check", async (req, res) => {
   res.send("Working fine");
 });
-
-
-
 app.get("/check2", async (req, res) => {
   res.send("HEllo world");
 });
-
-
 app.listen(4000, () => {
   console.log("Server is Running on:4000");
 });
